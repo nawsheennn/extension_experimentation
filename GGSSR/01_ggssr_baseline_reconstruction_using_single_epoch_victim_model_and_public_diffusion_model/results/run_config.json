@@ -1,0 +1,63 @@
+{
+  "seed": 2026,
+  "dataset": "flwrlabs/celeba",
+  "victim_architecture": "MLP_1",
+  "victim_training": {
+    "epochs": 1,
+    "batch_size": 64,
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05,
+    "test_accuracy_percent": 86.83999599238554
+  },
+  "target": {
+    "split": "test",
+    "index": 0,
+    "smiling": true,
+    "path": "vendor/ggssr_code/data/samples/celeba_target/target_0000.png"
+  },
+  "attack": {
+    "method": "GSS",
+    "guidance_scale": 0.2,
+    "interval": 1,
+    "diffusion_config": "configs/diffusion_ddim1000_config.yaml",
+    "task_config": "configs/reconstruction_config.yaml",
+    "gradient_noise_used_by_runner": "none (y_n = y in authors' runner)"
+  },
+  "checkpoints": {
+    "victim_path": "/content/vendor/ggssr_code/model_state/MLP_1.pth",
+    "victim_sha256": "8bad46385d5210f78cd48d826a398a5e5a59f2295b8ab424d19405c40687c9e8",
+    "diffusion_path": "/content/vendor/ggssr_code/models/ffhq_10m.pt",
+    "diffusion_sha256": "81d535743156ec6be34d8668e6920da94f0614074d7793a16c8fa9e306237faa"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "device": "cuda:0",
+    "datasets": "4.0.0",
+    "lpips": "0.1.4",
+    "opacus": "1.6.0"
+  },
+  "authors_repo_commit": "b337ef1192f3a04a776042882a2d636724817775",
+  "results": {
+    "metrics_csv": "/content/results/baseline_fixed_mr/evaluation/metrics.csv",
+    "reconstruction_grid": "/content/results/baseline_fixed_mr/reconstruction_grid.png",
+    "target": "/content/results/baseline_fixed_mr/target.png",
+    "final_reconstruction": "/content/results/baseline_fixed_mr/final_reconstruction.png",
+    "best_x0_mse": {
+      "timestep": 0,
+      "value": 0.0066683790646493435
+    },
+    "best_x0_psnr": {
+      "timestep": 0,
+      "value": 21.75979720630726
+    },
+    "best_x0_lpips": {
+      "timestep": 0,
+      "value": 0.45600005984306335
+    }
+  }
+}
