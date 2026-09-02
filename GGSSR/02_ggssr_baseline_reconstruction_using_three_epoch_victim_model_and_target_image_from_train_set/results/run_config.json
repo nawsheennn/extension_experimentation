@@ -1,0 +1,98 @@
+{
+  "seed": 2026,
+  "dataset": "flwrlabs/celeba",
+  "experiment": "training-member target with 3-epoch victim",
+  "hypothesis": "Greater victim fitting plus training-set membership may yield a more image-specific leaked-gradient signal and improve reconstruction; this is evaluated rather than assumed.",
+  "victim_architecture": "authors' MLP_1",
+  "victim_training": {
+    "split": "train",
+    "epochs": 3,
+    "batch_size": 64,
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05,
+    "test_accuracy_percent": 89.96593527702635,
+    "epoch_checkpoints": [
+      {
+        "epoch": 1,
+        "path": "/content/checkpoints/training_member_3epoch/MLP_1_epoch_01.pth",
+        "sha256": "89ee7d95f4efa97843d3cb7fbb575fa498899630864e17acf883e2161a2bd509"
+      },
+      {
+        "epoch": 2,
+        "path": "/content/checkpoints/training_member_3epoch/MLP_1_epoch_02.pth",
+        "sha256": "e3f60af3ccd67e96cbc0322864b2130411dbe477ba9a3d7c5e06aa194d81caec"
+      },
+      {
+        "epoch": 3,
+        "path": "/content/checkpoints/training_member_3epoch/MLP_1_epoch_03.pth",
+        "sha256": "2ad86c1e427da5e1bed685de2a4ba304834335f78a653a1a92138470e71a2511"
+      }
+    ]
+  },
+  "target": {
+    "split": "train",
+    "index": 4,
+    "class_attribute": "Smiling",
+    "class": 0,
+    "is_victim_training_member": true,
+    "selection_rule": "first training example with Smiling == 0",
+    "victim_prediction": 0,
+    "path": "/content/vendor/ggssr_code/data/samples/celeba_target/target_0000.png"
+  },
+  "attack": {
+    "method": "GSS",
+    "guidance_scale": 0.2,
+    "interval": 1,
+    "diffusion_steps": 1000,
+    "diffusion_config": "configs/diffusion_ddim1000_config.yaml",
+    "task_config": "configs/reconstruction_config.yaml",
+    "gradient_noise_used_by_runner": "none (y_n = y in authors' runner)",
+    "required_device": "CUDA GPU"
+  },
+  "source_changes": [
+    "Represent the authors' hard-coded class-0 target as a LongTensor class index.",
+    "Create the progress directory before passing it as save_root.",
+    "Save sparse x_t and predicted-x_0 snapshots every 100 steps and at t=0."
+  ],
+  "checkpoints": {
+    "victim_latest_path": "/content/vendor/ggssr_code/model_state/MLP_1.pth",
+    "victim_latest_sha256": "2ad86c1e427da5e1bed685de2a4ba304834335f78a653a1a92138470e71a2511",
+    "diffusion_path": "/content/vendor/ggssr_code/models/ffhq_10m.pt",
+    "diffusion_sha256": "81d535743156ec6be34d8668e6920da94f0614074d7793a16c8fa9e306237faa"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "device": "cuda:0",
+    "gpu": "Tesla T4",
+    "datasets": "4.0.0",
+    "lpips": "0.1.4",
+    "opacus": "1.6.0"
+  },
+  "authors_repo_commit": "b337ef1192f3a04a776042882a2d636724817775",
+  "results": {
+    "metrics_csv": "/content/results/training_member_3epoch_fixed_mr/evaluation/metrics.csv",
+    "reconstruction_grid": "/content/results/training_member_3epoch_fixed_mr/reconstruction_grid.png",
+    "mse_plot": "/content/results/training_member_3epoch_fixed_mr/evaluation/mse_trajectory.png",
+    "psnr_plot": "/content/results/training_member_3epoch_fixed_mr/evaluation/psnr_trajectory.png",
+    "lpips_plot": "/content/results/training_member_3epoch_fixed_mr/evaluation/lpips_trajectory.png",
+    "target": "/content/results/training_member_3epoch_fixed_mr/target.png",
+    "final_reconstruction": "/content/results/training_member_3epoch_fixed_mr/final_reconstruction.png",
+    "best_x0_mse": {
+      "timestep": 0,
+      "value": 0.1721872091293335
+    },
+    "best_x0_psnr": {
+      "timestep": 0,
+      "value": 7.639991131080896
+    },
+    "best_x0_lpips": {
+      "timestep": 0,
+      "value": 0.7185067534446716
+    }
+  }
+}
