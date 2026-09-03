@@ -1,0 +1,8 @@
+round,hamming_winner,euclidean_winner,same_winner
+1,0,0,True
+2,0,0,True
+3,0,0,True
+4,1,0,False
+5,0,0,True
+6,0,0,True
+7,0,0,True
