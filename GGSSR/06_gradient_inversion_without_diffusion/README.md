@@ -75,7 +75,7 @@ Despite this, their pixel MSEs remain **0.4311** and **0.4516**. None of the eig
 
 The best gradient matches are also the best two reconstructions by pixel MSE, so gradient matching is not completely unrelated to image similarity. Moving closer to the target gradient can move the candidate in a useful image-space direction. The important result is that this relationship is not strong enough for reconstruction: even an almost exact gradient-direction match still corresponds to a substantially different image.
 
-This rules out an important explanation for the earlier failure. The reconstruction problem is **not caused solely by the presence of the diffusion model or by GGSS-R's diffusion sampling procedure**. The same separation between gradient similarity and image recovery remains when diffusion is removed and the leaked gradient is attacked directly.
+This rules out an important explanation for the earlier failure. The reconstruction problem is not caused solely by the presence of the diffusion model or by GGSS-R's diffusion sampling procedure. The same separation between gradient similarity and image recovery remains when diffusion is removed and the leaked gradient is attacked directly.
 
 However, this experiment alone does not establish why that separation occurs or prove that the target gradient is numerically non-unique. It establishes the empirical problem: direct optimization can produce very strong gradient matches without recovering the target.
 
