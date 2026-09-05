@@ -45,9 +45,10 @@ The attack itself is then executed through the authors' `sample_condition_same_i
 * the authors' 1000-step DDIM configuration;
 * guidance rate
 
-  $$
-  m_r=0.20;
-  $$
+$$
+m_r=0.20;
+$$
+
 * batch size 1 for gradient acquisition;
 * no additional gradient perturbation, i.e. the runner uses the target gradient directly.
 
@@ -57,7 +58,7 @@ The reconstruction is evaluated using both the saved noisy diffusion states \(x_
 
 ## 3. Results / Outcomes / Observations / Interpretations
 
-The baseline victim model trained successfully and reached **86.97% training accuracy and 86.84% held-out test accuracy** after one epoch. The target was successfully loaded and processed, and the full 1000-step GGSS-R reconstruction completed successfully using the authors' code path.
+The baseline victim model trained successfully and reached 86.97% training accuracy and 86.84% held-out test accuracy after one epoch. The target was successfully loaded and processed, and the full 1000-step GGSS-R reconstruction completed successfully using the authors' code path.
 
 The reconstruction itself, however, did not recover the target image.
 
