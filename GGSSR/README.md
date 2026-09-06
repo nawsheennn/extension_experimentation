@@ -18,7 +18,7 @@ The paper reports reconstruction vulnerability for different model architectures
 
 A gradient can be nonzero and its distance can be successfully minimized without containing enough image-specific information to recover the input. Across the diagnostic experiments here, reconstruction failure is traced through the pipeline until the victim gradient itself is isolated. Layer-wise analyses then show that what matters is not simply model size, classification loss, or total gradient magnitude, but whether a sufficiently strong and informative gradient reaches the input-facing layers.
 
-This extends the architecture-focused view of reconstruction vulnerability into an architecture-and-state-dependent view of gradient identifiability.
+This extends the paper's architecture-focused analysis of reconstruction vulnerability by showing that gradient identifiability is also strongly dependent on the victim model's training state.
 
 ### Gradient similarity is not necessarily image similarity.
 
