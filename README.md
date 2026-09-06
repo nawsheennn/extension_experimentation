@@ -26,6 +26,12 @@ This extension examines *$r$ (the number of hyperplane projections)* - a core hy
 
 For full implementation details, notebooks, and benchmarks, see the [`LSHFed/`](./LSHFed/) directory.
 
+### Reproducibility
+
+All four experiments of LSHFed are self-contained. They can be downloaded and ran anywhere.
+
+---
+
 ## GGSS-R Extension
 
 The second extension focuses on GGSS-R from the *Enhanced Privacy Leakage from Noise-Perturbed Gradients via Gradient-Guided Conditional Diffusion Models* paper by Jiayang Meng et al. It studies the attack side of federated learning privacy, using gradient-guided diffusion sampling to reconstruct private client images from gradients exposed during FL. The experiments here investigate two aspects left underexplored in the original work: how victim architecture and training state affect gradient identifiability and reconstruction vulnerability, and whether dynamic guidance can improve reconstruction from perturbed gradients.
@@ -43,3 +49,9 @@ The investigation progresses through nine experiments:
 9. *Scheduled guidance under gradient perturbation:* Extends GGSS-R's fixed guidance rate with linear decay and finds better reconstruction from noisy gradients by reducing gradient influence during later denoising.
 
 For full implementation details, diagnostic results, and experiment-level findings, see the [`GGSSR/`](./GGSSR/) directory.
+
+### Reproducibility
+
+Experiments 01 (baseline reconstruction), 02 (training-member reconstruction), 03 (unperturbed reconstruction diagnostics), and 09 (scheduled guidance under gradient perturbation) are self-contained experiments. Each of their notebooks can be downloaded and ran anywhere independently.
+
+Experiments 04 (unconditional diffusion), 05 (gss without gradient guidance), 06 (direct gradient inversion), 07 (gradient identifiability analyses) and 08 (victim architecture and state comparison) use files from my personal Drive as input. They are thus not self-contained, and cannot be executed independently.
