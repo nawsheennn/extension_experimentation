@@ -30,6 +30,8 @@ For full implementation details, notebooks, and benchmarks, see the [`LSHFed/`](
 
 All four experiments of LSHFed are self-contained. They can be downloaded and ran independently.
 
+For easiest reproducibility, it is best to download the notebooks, upload them to **Colab**, set the device to **T4 GPU**, and execute.
+
 ### Requirements
 
 All experiments were done on Google Colab with the following environmental setup:
@@ -64,7 +66,9 @@ Experiments 01 (baseline reconstruction), 02 (training-member reconstruction), 0
 
 Experiments 04 (unconditional diffusion), 05 (gss without gradient guidance), 06 (direct gradient inversion), 07 (gradient identifiability analyses) and 08 (victim architecture and state comparison) use files from my personal Drive as input. They are thus not self-contained, and cannot be executed independently.
 
-All experiments **must be executed on a CUDA-enabled GPU**. Trying to reproduce on CPU will result in failure. As there a 1000 diffusion timesteps involved in these experiments, the code was explicitly written to require GPU.
+All experiments **must be executed on a CUDA-enabled GPU**. Trying to reproduce on CPU will result in failure. As there a 1000 diffusion timesteps involved in these experiments, the code was explicitly written to require GPU. 
+
+For easiest reproducibility, it is best to download the notebooks, upload them to **Colab**, set the device to **T4 GPU**, and execute.
 
 ### Requirements
 
