@@ -28,7 +28,15 @@ For full implementation details, notebooks, and benchmarks, see the [`LSHFed/`](
 
 ### Reproducibility
 
-All four experiments of LSHFed are self-contained. They can be downloaded and ran anywhere.
+All four experiments of LSHFed are self-contained. They can be downloaded and ran independently.
+
+### Requirements
+
+All experiments were done on Google Colab with the following environmental setup:
+
+PyTorch: 2.11.0+cu128
+CUDA   : 12.8
+GPU    : Tesla T4 
 
 ---
 
@@ -52,6 +60,16 @@ For full implementation details, diagnostic results, and experiment-level findin
 
 ### Reproducibility
 
-Experiments 01 (baseline reconstruction), 02 (training-member reconstruction), 03 (unperturbed reconstruction diagnostics), and 09 (scheduled guidance under gradient perturbation) are self-contained experiments. Each of their notebooks can be downloaded and ran anywhere independently.
+Experiments 01 (baseline reconstruction), 02 (training-member reconstruction), 03 (unperturbed reconstruction diagnostics), and 09 (scheduled guidance under gradient perturbation) are self-contained experiments. Each of their notebooks can be downloaded and ran independently.
 
 Experiments 04 (unconditional diffusion), 05 (gss without gradient guidance), 06 (direct gradient inversion), 07 (gradient identifiability analyses) and 08 (victim architecture and state comparison) use files from my personal Drive as input. They are thus not self-contained, and cannot be executed independently.
+
+All experiments **must be executed on a CUDA-enabled GPU**. Trying to reproduce on CPU will result in failure. As there a 1000 diffusion timesteps involved in these experiments, the code was explicitly written to require GPU.
+
+### Requirements
+
+All experiments were done on Google Colab with the following environmental setup:
+
+PyTorch: 2.11.0+cu128
+CUDA   : 12.8
+GPU    : Tesla T4 
