@@ -34,9 +34,9 @@ All four experiments of LSHFed are self-contained. They can be downloaded and ra
 
 All experiments were done on Google Colab with the following environmental setup:
 
-PyTorch: 2.11.0+cu128
-CUDA   : 12.8
-GPU    : Tesla T4 
+- PyTorch: 2.11.0+cu128
+- CUDA   : 12.8
+- GPU    : Tesla T4 
 
 ---
 
@@ -70,6 +70,6 @@ All experiments **must be executed on a CUDA-enabled GPU**. Trying to reproduce 
 
 All experiments were done on Google Colab with the following environmental setup:
 
-PyTorch: 2.11.0+cu128
-CUDA   : 12.8
-GPU    : Tesla T4 
+- PyTorch: 2.11.0+cu128
+- CUDA   : 12.8
+- GPU    : Tesla T4 
